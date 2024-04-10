@@ -14,11 +14,23 @@
   },
   "dependencies": {
     "@sap/cds": "^7",
-    "express": "^4.17.1"
+    "@sap/cds-dk": "^7",
+    "express": "^4.17.1",
+    "@sap/cds-hana": "^2"
   },
   "scripts": {
     "genres": "cds serve test/genres.cds",
+    "start:hybrid": "cds bind --to test-db -- && cds watch --profile hybrid",
     "start": "cds-serve",
     "watch": "cds watch"
+  },
+  "cds": {
+    "log": {
+      "levels": {
+        "db": "trace",
+        "app": "trace",
+        "cds": "trace"
+      }
+    }
   }
 }
